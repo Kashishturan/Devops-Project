@@ -1,1 +1,13 @@
+def movement(row, col):
+if board[row][col] == "" and not game_over:
+board[row][col] = current_player
+buttons[row][col].config(text=current_player)
+if check_win():
+messagebox.showinfo("Tic Tac Toe", f"Player {current_player} wins the game !")
+reset_board()
+elif check_draw():
+messagebox.showinfo("Tic Tac Toe", "Opps! It's a draw , no winner ")
+reset_board()
+else:
+toggle_player()
 
