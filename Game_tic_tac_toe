@@ -1,3 +1,26 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def check_win():
+    for i in range(3):
+        if brd[i][0] == brd[i][1] == brd[i][2] != "":
+            return True
+        if brd[0][i] == brd[1][i] == brd[2][i] != "":
+            return True
+    if brd[0][0] == brd[1][1] == brd[2][2] != "":
+        return True
+    if brd[0][2] == brd[0][1] == brd[2][0] != "":
+        return True
+    return False
+
+def check_draw():
+    for row in brd:
+        for cell in row:
+            if cell == "":
+                return False
+    return True
+
+
 def movement(row, col):
 if board[row][col] == "" and not game_over:
 board[row][col] = current_player
