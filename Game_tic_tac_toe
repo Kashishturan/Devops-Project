@@ -40,9 +40,6 @@ def reset_board():
             board[i][j] = ""
             buttons[i][j].config(text="", state=tk.NORMAL)
 
-reset_button = tk.Button(root, text="Reset", command=reset_board)
-reset_button.grid(row=3, column=1)
-
 def toggle_player():
     global current_player
     if current_player == "X":
@@ -66,5 +63,8 @@ for i in range(3):
         buttons[i][j] = tk.Button(root, text="", width=10, height=2,
                                   command=lambda row=i, col=j: make_move(row, col))
         buttons[i][j].grid(row=i, column=j)
+
+reset_button = tk.Button(root, text="Reset", command=reset_board)
+reset_button.grid(row=3, column=1)
 
 root.mainloop()
