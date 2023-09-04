@@ -34,3 +34,15 @@ reset_board()
 else:
 toggle_player()
 
+def reset_board():
+    global current_player, game_over
+    current_player = "X"
+    game_over = False
+    for i in range(3):
+        for j in range(3):
+            board[i][j] = ""
+            buttons[i][j].config(text="", state=tk.NORMAL)
+
+reset_button = tk.Button(root, text="Reset", command=reset_board)
+reset_button.grid(row=3, column=1)
+
