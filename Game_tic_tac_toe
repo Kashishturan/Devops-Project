@@ -45,7 +45,7 @@ reset_button.grid(row=3, column=1)
 
 def toggle_player():
     global current_player
-    if current_player == "X"
+    if current_player == "X":
         current_player = "O"
     else:
         current_player = "X"
