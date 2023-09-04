@@ -50,3 +50,21 @@ def toggle_player():
     else:
         current_player = "X"
 
+root = tk.Tk()
+root.title("Tic Tac Toe")
+
+
+board = [["" for _ in range(3)] for _ in range(3)]
+current_player = "X"
+game_over = False
+
+
+buttons = [[None, None, None], [None, None, None], [None, None, None]]
+
+for i in range(3):
+    for j in range(3):
+        buttons[i][j] = tk.Button(root, text="", width=10, height=2,
+                                  command=lambda row=i, col=j: make_move(row, col))
+        buttons[i][j].grid(row=i, column=j)
+
+root.mainloop()
